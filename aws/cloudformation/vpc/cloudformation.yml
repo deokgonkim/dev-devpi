@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: VPC
+
+Resources:
+  EcsTaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: vpc-ecs-taskRole
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+
+Outputs:
+  VPC:
+    Description: VPC
+    Value: vpc-id
+    Export:
+      Name: VpcId
+
+  PublicSubnetA:
+    Description: Public Subnet A
+    Value: subnet-id
+    Export:
+      Name: PublicSubnetA
+
+  PublicSubnetB:
+    Description: Public Subnet B
+    Value: subnet-id
+    Export:
+      Name: PublicSubnetB
+
+  PublicSubnetC:
+    Description: Public Subnet C
+    Value: subnet-id
+    Export:
+      Name: PublicSubnetC
+
+  PrivateSubnetA:
+    Description: Private Subnet A
+    Value: subnet-id
+    Export:
+      Name: PrivateSubnetA
+
+  PrivateSubnetB:
+    Description: Private Subnet B
+    Value: subnet-id
+    Export:
+      Name: PrivateSubnetB
+
+  PrivateSubnetC:
+    Description: Private Subnet C
+    Value: subnet-id
+    Export:
+      Name: PrivateSubnetC
+
+  SecurityGroupVPC:
+    Value: sg-id
+    Export:
+      Name: SecurityGroupVPC
+  
+  SecurityGroupDevelopment:
+    Value: sg-id
+    Export:
+      Name: SecurityGroupDevelopment
+  
+  CertificateArn:
+    Value: arn:aws:acm:ap-northeast-2:[accountNumber]:certificate/[uuid]
+    Export:
+      Name: CertificateArn
+
+  HostedZoneName:
+    Value: dgkim.net
+    Export:
+      Name: HostedZoneName

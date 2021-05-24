@@ -1,0 +1,8 @@
+---
+devpi-ldap:
+  url: ${LDAP_URL}
+  user_template: ${LDAP_USER_TEMPLATE}
+  group_search:
+    base: ${LDAP_GROUP_BASE}
+    filter: (&(objectClass=groupOfNames)(member={userdn}))
+    attribute_name: cn

@@ -1,0 +1,13 @@
+data
+__pycache__
+*.pyc
+sample/build
+sample/dist
+sample/sample.egg-info
+
+usage/venv
+
+aws/cloudformation/test/.env
+aws/cloudformation/vpc-dgkim
+
+.env.local
